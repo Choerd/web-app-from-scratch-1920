@@ -1,17 +1,40 @@
 # Web App: Quizmaster
 
-### Done
-- [ ] 
+## Table of Contents
+* [Assignment](#Assignment)
+* [Concept](#Concept)
+* [Install notes](#Install-notes)
+* [API](#API)
+* [Data transformation and manipulation](#Data-transformation-and-manipulation)
+* [Features](#Features)
+* [Credits](#Credits)
 
-### Wishlist
+
+## Assignment
+
+
+## Concept
+
+## Install notes
+
+## API
+
+
+## Data transformation and manipulation
+
+
+## Features
+**Done**
+- [ ] Item
+
+**Wishlist**
 - [ ] Kaarten in je hand krijgen op hover hogere z-index
-- [ ] 
+- [ ] Item
+
+## Credits
 
 
 
-<!-- ☝️ replace this description with a description of your own work -->
-
-<!-- replace the code in the /docs folder with your own, so you can showcase your work with GitHub Pages 🌍 -->
 
 <!-- Add a nice poster image here at the end of the week, showing off your shiny frontend 📸 -->
 
@@ -23,6 +46,5 @@
 
 <!-- What external data source is featured in your project and what are its properties 🌠 -->
 
-<!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
 
 <!-- How about a license here? 📜 (or is it a licence?) 🤷 -->

@@ -1,5 +1,33 @@
-p {
-    padding: 20px;
+* {
+    font-family: Raleway, Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.question {
+    position: absolute;
+    left: 50vw;
+    top: 20vh;
+    transform: translate(-50%, 0%);
+    width: 20vw;
+    height: 45vh;
     background-color: black;
-    color: white;
+}
+
+.answers {
+    position: absolute;
+    left: 50vw;
+    bottom: 0;
+    transform: translate(-50%, 0%);
+    width: fit-content;
+    padding: 10px;
+    background-color: red;
+}
+
+.answers div {
+    background-color: green;
+    margin: 5px;
+    width: 120px;
+    height: 180px;
+    display: inline-block;
 }
