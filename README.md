@@ -1,6 +1,13 @@
-# Web App From Scratch @cmda-minor-web 1920
+# Web App: Quizmaster
 
-<!-- Add a link to your live demo in Github Pages 🌐-->
+### Done
+- [ ] 
+
+### Wishlist
+- [ ] Kaarten in je hand krijgen op hover hogere z-index
+- [ ] 
+
+
 
 <!-- ☝️ replace this description with a description of your own work -->
 
