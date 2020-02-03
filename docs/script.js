@@ -4,13 +4,12 @@ fetchData()
     .then(data => pickRandomQuestion(data))
     .catch(error => console.log(error))
 
+//TODO: Write first-time-render function
+
 function pickRandomQuestion(data) {
     data = data.filter((d, i) => i != generateRandomNumber(data))
-    console.log(data)
     assignValuesToCards(data[generateRandomNumber(data)])
 }
-
-//TODO: Write first time render function
 
 function assignValuesToCards(trivia) {
     document.querySelector('.question').insertAdjacentHTML('afterbegin', '<p>' + trivia.question + '</p>')
@@ -21,7 +20,9 @@ function assignValuesToCards(trivia) {
     answerCards.forEach(card => {
         if (card == answerCards[correctAnswerCard]) {
             card.className = "true"
-            card.insertAdjacentHTML('afterbegin', '<p>' + trivia.correct_answer + '</p>')
+            card.insertAdjacentHTML('beforeend', '<p>' + trivia.correct_answer + '</p>')
+            console.log(card)
+            console.log(trivia.correct_answer)
         } else {
             card.className = "false"
             console.log(card)

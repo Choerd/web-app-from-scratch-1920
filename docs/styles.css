@@ -6,13 +6,21 @@
 
 body {
     height: 100vh;
-    background-color: #1A1B1E;
+    background-color: #F50058;
+}
+
+.game img {
+    position: absolute;
+    transform: translate(-50%, 0%);
+    left: 50%;
+    top: 10%;
+    width: 25%;
 }
 
 .game > div:first-of-type, .game > div:nth-of-type(2) div {
     border-radius: 10px;
     background-color: white;
-    box-shadow: inset 0px 0px 10px 0px rgba(219,219,219,1);
+    box-shadow: inset 0px 0px 10px 0px rgb(201, 201, 201);
 }
 
 .question {
@@ -41,10 +49,9 @@ body {
 .answers {
     position: absolute;
     left: 50vw;
-    bottom: 5vh;
+    bottom: 7vh;
     transform: translate(-50%, 0%);
     width: fit-content;
-    padding: 10px;
 }
 
 .answers div {
@@ -55,7 +62,7 @@ body {
     position: relative;
 }
 
-.answers:hover {
+.answers:hover, .question:hover {
     cursor: pointer;
 }
 
@@ -69,9 +76,9 @@ body {
 }
 
 .answers div:nth-of-type(1):hover {
-    transform: rotate(-25deg) scale(1.1);
+    transform: rotate(-25deg) scale(1.05);
     z-index: 2;
-    transition: transform .5s;
+    transition: transform .3s;
 }
 
 .answers div:nth-of-type(2) {
@@ -80,10 +87,9 @@ body {
 }
 
 .answers div:nth-of-type(2):hover {
-    transform: rotate(-10deg) scale(1.1);
+    transform: rotate(-10deg) scale(1.05);
     z-index: 2;
-    transition: transform .5s;
-    margin-bottom: 10px;
+    transition: transform .3s;
 }
 
 .answers div:nth-of-type(3) {
@@ -92,9 +98,9 @@ body {
 }
 
 .answers div:nth-of-type(3):hover {
-    transform: rotate(10deg) scale(1.1);
+    transform: rotate(10deg) scale(1.05);
     z-index: 2;
-    transition: transform .5s;
+    transition: transform .3s;
 }
 
 .answers div:nth-of-type(4) {
@@ -102,7 +108,7 @@ body {
 }
 
 .answers div:nth-of-type(4):hover {
-    transform: rotate(25deg) scale(1.1);
+    transform: rotate(25deg) scale(1.05);
     z-index: 2;
-    transition: transform .5s;
+    transition: transform .3s;
 }
