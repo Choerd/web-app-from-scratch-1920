@@ -1,36 +1,42 @@
 import fetchData from './modules/data.js'
+import render from './modules/renderGame.js'
 
 fetchData()
-    .then(data => pickRandomQuestion(data))
+    .then(data => renderGame(data))
     .catch(error => console.log(error))
 
-//TODO: Write first-time-render function
 
-function pickRandomQuestion(data) {
-    data = data.filter((d, i) => i != generateRandomNumber(data))
-    assignValuesToCards(data[generateRandomNumber(data)])
+function renderGame(data) {
+    let div = document.createElement('div')
+    document.querySelector('body').insertAdjacentElement('afterbegin', div)
+    div.className = "game"
+
+    // Creates the cards
+    render.createCards(data)
+
+    // Assign values to the cards
+    addQuestionsAndAnswers(data)
 }
 
-function assignValuesToCards(trivia) {
+function addQuestionsAndAnswers(data) {
+    let trivia = data[generateRandomNumber(data)]
+    data = data.filter((d, i) => d != trivia)
+
+    let answerCards = document.querySelectorAll('.answers > div')
+    answerCards[generateRandomNumber(answerCards)].className = "true"
+
     document.querySelector('.question').insertAdjacentHTML('afterbegin', '<p>' + trivia.question + '</p>')
+    document.querySelector('.answers .true').insertAdjacentHTML('afterbegin', '<p>' + trivia.correct_answer + '</p>')
 
-    let answerCards = document.querySelectorAll('.answers div')
-    let correctAnswerCard = generateRandomNumber(answerCards)
-
-    answerCards.forEach(card => {
-        if (card == answerCards[correctAnswerCard]) {
-            card.className = "true"
-            card.insertAdjacentHTML('beforeend', '<p>' + trivia.correct_answer + '</p>')
-            console.log(card)
-            console.log(trivia.correct_answer)
-        } else {
-            card.className = "false"
-            console.log(card)
-            console.log(trivia.incorrect_answers)
-        }
-    })
+    let wrongAnswerCards = document.querySelectorAll('.answers div:not(.true)')
+    let wrongAnswers = trivia.incorrect_answers
+    for (let i = 0; i < wrongAnswers.length; i++) {
+        wrongAnswerCards[i].insertAdjacentHTML('afterbegin', '<p>' + wrongAnswers[i] + '</p>')
+    }
+    return data
 }
+
 
 function generateRandomNumber(array) {
-    return Math.floor(Math.random() * Math.floor(array.length))
+    return Math.floor(Math.random() * Math.floor(array.length - 1))
 }
