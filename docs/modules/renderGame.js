@@ -2,20 +2,23 @@ export default {
     createCards
 }
 
-export function createCards(data) {
+function createCards(data) {
     createQuestionCard()
     createAnswerCards(data)
 }
 
-export function createQuestionCard() {
+function createQuestionCard() {
     let div = document.createElement('div')
+    div.className = "question"
     let img = document.createElement('img')
     img.src = "images/quizmaster-logo.svg"
+    let p = document.createElement('p')
+    document.querySelector('.game').appendChild(div).appendChild(p)
     document.querySelector('.game').appendChild(div).appendChild(img)
-    div.className = "question"
+
 }
 
-export function createAnswerCards(data) {
+function createAnswerCards(data) {
     let div = document.createElement('div')
     document.querySelector('.game').appendChild(div)
     div.className = "answers"
@@ -28,6 +31,8 @@ export function createAnswerCards(data) {
         let div = document.createElement('div')
         let img = document.createElement('img')
         img.src = "images/quizmaster-logo.svg"
+        let p = document.createElement('p')
+        document.querySelector('.answers').appendChild(div).appendChild(p)
         document.querySelector('.answers').appendChild(div).appendChild(img)
     })
 }
