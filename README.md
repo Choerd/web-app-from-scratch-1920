@@ -14,6 +14,8 @@
 
 
 ## Concept
+<img alt="Schermafbeelding 2020-02-04 om 15 53 21" src="https://user-images.githubusercontent.com/45365598/73755620-9a594780-4766-11ea-95c9-1b4ba1f4a020.png">
+
 
 ## Install notes
 

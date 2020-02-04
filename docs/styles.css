@@ -17,6 +17,10 @@ body {
     width: 25%;
 }
 
+.question, .answers > div {
+    border: 1px solid rgb(208, 208, 208);
+}
+
 .game > div:first-of-type, .game > div:nth-of-type(2) div {
     border-radius: 10px;
     background-color: white;

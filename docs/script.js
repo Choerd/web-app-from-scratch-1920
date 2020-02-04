@@ -2,6 +2,7 @@ import fetchData from './modules/data.js'
 import render from './modules/renderGame.js'
 import generateQuestionsAndAnswers from './modules/playRound.js'
 
+
 fetchData()
     .then(data => renderGame(data))
     .catch(error => console.log(error))
@@ -26,6 +27,7 @@ function playGame(data) {
         })
     })
 }
+
 
 function checkAnswers(answer, data) {
     console.log(answer)
