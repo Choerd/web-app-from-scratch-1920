@@ -16,8 +16,6 @@
 ## Concept
 <img alt="Schermafbeelding 2020-02-04 om 15 56 22" src="https://user-images.githubusercontent.com/45365598/73755834-f45a0d00-4766-11ea-87ef-8f2234a89881.png">
 
-
-
 ## Install notes
 
 ## API

@@ -21,5 +21,5 @@ export default function generateQuestionsAndAnswers(data) {
 }
 
 function generateRandomNumber(array) {
-    return Math.floor(Math.random() * Math.floor(array.length - 1))
+    return Math.floor(Math.random() * Math.floor(array.length))
 }
