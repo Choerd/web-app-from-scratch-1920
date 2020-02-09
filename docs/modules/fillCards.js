@@ -1,4 +1,5 @@
 import { randomObjectFromArray } from './helperFunctions.js'
+import { decodeEntities } from './helperFunctions.js'
 
 export default function fillCards(trivia) {
     let cards = randomizeCards()
@@ -6,10 +7,10 @@ export default function fillCards(trivia) {
     let correctAnswer = trivia.correct_answer
     let wrongAnswers = trivia.incorrect_answers
 
-    document.querySelector('.question p').innerHTML = question
-    cards[0].querySelector('p').innerHTML = correctAnswer
+    document.querySelector('.question p').textContent = decodeEntities(question)
+    cards[0].querySelector('p').textContent = decodeEntities(correctAnswer)
     for (let i = 0; i < cards[1].length; i++) {
-        cards[1][i].querySelector('p').innerHTML = wrongAnswers[i]
+        cards[1][i].querySelector('p').textContent = decodeEntities(wrongAnswers[i])
     }
 }
 
