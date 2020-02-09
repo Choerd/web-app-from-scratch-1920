@@ -1,7 +1,8 @@
 import fillCards from './fillCards.js'
 import { popUsedQuestion } from './helperFunctions.js'
 
-let changedData
+let changedData // Global varible to update the data on user input
+
 export default function playRound(data) {
     changedData = data
     document.querySelectorAll('.answers div').forEach(card => {
@@ -31,6 +32,8 @@ function saveTriviaData(user) {
         wrongAnswers: wrongAnswers
     })
     localStorage.setItem('trivia', JSON.stringify(savedAnswers))
+
+    console.log("Saved data", savedAnswers)
 }
 
 function rerenderCards() {
