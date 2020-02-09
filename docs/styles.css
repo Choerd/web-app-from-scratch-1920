@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+.hide {
+    display: none;
+}
+
 body {
     height: 100vh;
     background-color: #f2b31f;

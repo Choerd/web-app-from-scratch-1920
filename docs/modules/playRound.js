@@ -1,14 +1,14 @@
 import fillCards from './fillCards.js'
 import { popUsedQuestion } from './helperFunctions.js'
 
-
+let changedData
 export default function playRound(data) {
+    changedData = data
     document.querySelectorAll('.answers div').forEach(card => {
         card.addEventListener('click', function () {
 
             saveTriviaData(this)
-
-            test(data)
+            changedData = rerenderCards()
 
         })
     })
@@ -33,16 +33,17 @@ function saveTriviaData(user) {
     localStorage.setItem('trivia', JSON.stringify(savedAnswers))
 }
 
-function test(data) {
-    // TODO: Steps
-    // Remove the trivia from the array
-    // Rerender with a new trivia
+function rerenderCards() {
+    let newTrivia = changedData[Math.floor(Math.random() * Math.floor(changedData.length))]
 
-    let trivia = data[Math.floor(Math.random() * Math.floor(data.length))]
+    console.log(newTrivia)
+    console.log(changedData)
 
-    fillCards(trivia)
+    if (changedData.length != 0) {
+        fillCards(newTrivia)
+    } else {
+        document.querySelector('.game').className = "hide"
+    }
 
-    console.log(trivia)
-    console.log(data)
-    data = popUsedQuestion(data, trivia) // remove from array
+    return popUsedQuestion(changedData, newTrivia)
 }
