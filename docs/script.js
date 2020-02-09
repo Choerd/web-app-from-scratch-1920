@@ -1,11 +1,8 @@
 import fetchData from './modules/data.js'
 import setupGame from './modules/setupGame.js'
-import playGame from './modules/playGame.js'
-// import pickTrivia from './modules/selectTrivia.js'
+import fillCards from './modules/playGame.js'
 
 fetchData()
     .then(data => setupGame(data))
-    .then(data => playGame(data))
+    .then(data => fillCards(data))
     .catch(error => console.log(error))
-
-

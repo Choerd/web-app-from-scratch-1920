@@ -1,5 +1,5 @@
 import { createContainer, createQuestionCard, createAnswerCard } from './createCards.js'
-import pickTrivia from './selectTrivia.js'
+import { pickTrivia } from './helperFunctions.js'
 
 export default function setupGame(data) {
     let trivia = pickTrivia(data)
@@ -9,5 +9,6 @@ export default function setupGame(data) {
     document.querySelector('.game').appendChild(createQuestionCard())
     document.querySelector('.game').appendChild(createContainer("answers"))
     answers.forEach(answer => document.querySelector('.answers').appendChild(createAnswerCard()))
+
     return data
 }
