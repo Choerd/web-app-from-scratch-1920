@@ -1,8 +1,8 @@
-import { pickTrivia, randomObjectFromArray } from './helperFunctions.js'
+import { randomObjectFromArray } from './helperFunctions.js'
 
 export default function fillCards(data) {
     let cards = randomizeCards()
-    let trivia = pickTrivia(data)[0]
+    let trivia = data[Math.floor(Math.random() * Math.floor(data.length))]
 
     let question = trivia.question
     document.querySelector('.question p').innerHTML = question
@@ -14,10 +14,18 @@ export default function fillCards(data) {
     for (let i = 0; i < cards[1].length; i++) {
         cards[1][i].querySelector('p').innerHTML = wrongAnswers[i]
     }
+
+    return [trivia, data]
 }
 
 function randomizeCards() {
     let answerCards = document.querySelectorAll('.answers div')
+
+    answerCards.forEach(card => {
+        if (card.getAttribute('data-answer') != null) {
+            card.removeAttribute('data-answer')
+        }
+    })
 
     let correctAnswerCard = randomObjectFromArray(answerCards)
     correctAnswerCard.setAttribute('data-answer', true)
@@ -27,7 +35,7 @@ function randomizeCards() {
 
     // Console.log for overview of the answers
     answerCards.forEach((card, i) => {
-        console.log("Kaart", i, ":", card)
+        console.log("Kaart", i + 1, ":", card)
     })
 
     return [correctAnswerCard, wrongAnswerCards]
