@@ -12,5 +12,5 @@ export default function setupGame(data) {
     // Create empty array to save all the answers
     window.localStorage.setItem('trivia', JSON.stringify([]))
 
-    return data
+    return [trivia, data]
 }

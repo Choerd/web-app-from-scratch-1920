@@ -1,8 +1,9 @@
 import { randomObjectFromArray } from './helperFunctions.js'
 
 export default function fillCards(data) {
+    console.log(data)
     let cards = randomizeCards()
-    let trivia = data[Math.floor(Math.random() * Math.floor(data.length))]
+    let trivia = data[1][Math.floor(Math.random() * Math.floor(data[1].length))]
 
     let question = trivia.question
     document.querySelector('.question p').innerHTML = question
@@ -15,7 +16,9 @@ export default function fillCards(data) {
         cards[1][i].querySelector('p').innerHTML = wrongAnswers[i]
     }
 
-    return [trivia, data]
+    let newData = data[1].filter(d => d != data[0])
+
+    return [trivia, newData]
 }
 
 function randomizeCards() {
