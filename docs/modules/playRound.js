@@ -1,18 +1,14 @@
 import fillCards from './fillCards.js'
+import { popUsedQuestion } from './helperFunctions.js'
+
 
 export default function playRound(data) {
     let answerCards = document.querySelectorAll('.answers div')
 
     answerCards.forEach(card => {
         card.addEventListener('click', function () {
-            let savedAnswers = JSON.parse(localStorage.getItem('trivia'))
-            savedAnswers.push({
-                answer: card.querySelector('p').textContent,
-                totalAnswers: [data[0].correct_answer, data[0].incorrect_answers].flat(2)
-            })
-            localStorage.setItem('trivia', JSON.stringify(savedAnswers))
 
-            fillCards(data)
+            test(data)
 
             // TODO: Steps
             //// Add them to the LocalStorage variable
@@ -22,3 +18,12 @@ export default function playRound(data) {
     })
 }
 
+function test(data) {
+    let trivia = data[Math.floor(Math.random() * Math.floor(data.length))]
+
+    fillCards(trivia)
+
+    console.log(trivia)
+    console.log(data)
+    data = popUsedQuestion(data, trivia)
+}

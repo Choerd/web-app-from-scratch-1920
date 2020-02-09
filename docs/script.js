@@ -5,6 +5,5 @@ import playRound from './modules/playRound.js'
 
 fetchData()
     .then(data => setupGame(data))
-    .then(data => fillCards(data))
     .then(data => playRound(data))
     .catch(error => console.log(error))

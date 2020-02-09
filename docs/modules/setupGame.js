@@ -1,4 +1,7 @@
 import { createContainer, createQuestionCard, createAnswerCard } from './createCards.js'
+import fillCards from './fillCards.js'
+import { popUsedQuestion } from './helperFunctions.js'
+
 
 export default function setupGame(data) {
     let trivia = data[Math.floor(Math.random() * Math.floor(data.length))]
@@ -12,5 +15,9 @@ export default function setupGame(data) {
     // Create empty array to save all the answers
     window.localStorage.setItem('trivia', JSON.stringify([]))
 
-    return [trivia, data]
+    console.log(trivia)
+    console.log(data)
+
+    fillCards(trivia)
+    return popUsedQuestion(data, trivia)
 }
