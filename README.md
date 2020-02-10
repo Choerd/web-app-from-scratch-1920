@@ -12,17 +12,18 @@
 
 ## Assignment
 
-
 ## Concept
 <img alt="Schermafbeelding 2020-02-04 om 15 56 22" src="https://user-images.githubusercontent.com/45365598/73755834-f45a0d00-4766-11ea-87ef-8f2234a89881.png">
 
 ## Install notes
 
+## Actor diagram
+<img alt="Schermafbeelding 2020-02-10 om 11 56 06" src="https://user-images.githubusercontent.com/45365598/74144150-7ed5bd00-4bfc-11ea-85f3-49d91e843faa.png">
+
+
 ## API
 
-
 ## Data transformation and manipulation
-
 
 ## Features
 **Done**
@@ -33,9 +34,6 @@
 - [ ] Item
 
 ## Credits
-
-
-
 
 <!-- Add a nice poster image here at the end of the week, showing off your shiny frontend 📸 -->
 
