@@ -1,10 +1,10 @@
 export { createContainer, createQuestionCard, createAnswerCard }
 
-function createContainer(classname) {
-    let div = document.createElement('div')
-    div.className = classname
+function createContainer(attribute) {
+    let section = document.createElement('section')
+    section.className = attribute
 
-    return div
+    return section
 }
 
 function createQuestionCard() {

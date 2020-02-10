@@ -1,5 +1,5 @@
 import fillCards from './fillCards.js'
-import { popUsedQuestion } from './helperFunctions.js'
+import { popUsedQuestion } from '../helperFunctions.js'
 
 let changedData // Global varible to update the data on user input
 
@@ -8,12 +8,30 @@ export default function playRound(data) {
     document.querySelectorAll('.answers div').forEach(card => {
         card.addEventListener('click', function () {
 
-            // Write function that checks if the answer is correct or wrong and changes background color to green or red
+            checkAnswer(this)
             saveTriviaData(this)
-            changedData = rerenderCards()
+
+            setTimeout(function () {
+                document.documentElement.style.setProperty('--main-color', '');
+                changedData = rerenderCards()
+            }, 500)
 
         })
     })
+}
+
+function checkAnswer(answer) {
+    let correctAnswer = document.querySelector('.answers div[data-answer="true"]').textContent
+    let userAnswer = answer.querySelector('p').textContent
+
+    let correctColor = getComputedStyle(document.documentElement).getPropertyValue('--correct-answer')
+    let wrongColor = getComputedStyle(document.documentElement).getPropertyValue('--wrong-answer')
+
+    if (correctAnswer == userAnswer) {
+        document.documentElement.style.setProperty('--main-color', correctColor);
+    } else {
+        document.documentElement.style.setProperty('--main-color', wrongColor);
+    }
 }
 
 function saveTriviaData(user) {
@@ -46,8 +64,13 @@ function rerenderCards() {
     if (changedData.length != 0) {
         fillCards(newTrivia)
     } else {
-        document.querySelector('.game').className = "hide"
+        gameOver()
     }
 
     return popUsedQuestion(changedData, newTrivia)
+}
+
+function gameOver() {
+    document.querySelector('.game').className = "hide"
+    document.querySelector('.enter-results').classList.remove("hide")
 }

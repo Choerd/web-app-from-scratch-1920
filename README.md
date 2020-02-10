@@ -4,6 +4,7 @@
 * [Assignment](#Assignment)
 * [Concept](#Concept)
 * [Install notes](#Install-notes)
+* [Actor diagram](#Actor-diagram)
 * [API](#API)
 * [Data transformation and manipulation](#Data-transformation-and-manipulation)
 * [Features](#Features)
@@ -30,7 +31,6 @@
 - [ ] Item
 
 **Wishlist**
-- [ ] Kaarten in je hand krijgen op hover hogere z-index
 - [ ] Item
 
 ## Credits

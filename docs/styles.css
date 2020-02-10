@@ -3,8 +3,8 @@
     --main-background-color: #fff;
     --box-shadow: inset 0px 0px 10px 0px rgb(201, 201, 201);
     --border: 1px solid rgb(208, 208, 208);
-    --correct-answer: #D81D57;
-    --wrong-answer: #2ab17b;
+    --correct-answer: #2ab17b;
+    --wrong-answer: #D81D57;
 }
 
 * {
@@ -22,6 +22,35 @@ body {
     background-color: var(--main-color);
 }
 
+#before-game, .enter-results {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#before-game h1, .enter-results h1 {
+    font-size: 8vw;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#before-game a, .enter-results a {
+    font-size: 2vw;
+    display: block;
+    background-color: var(--main-background-color);
+    padding: 28px 40px;
+    width: fit-content;
+    margin: auto;
+    margin-top: 5vh;
+    border-radius: 100px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 600;
+    background-color: var(--wrong-answer);
+}
+
 .game img {
     position: absolute;
     transform: translate(-50%, 0%);
@@ -34,7 +63,7 @@ body {
     border: var(--border)
 }
 
-.game > div:first-of-type, .game > div:nth-of-type(2) div {
+.game > .question, .game > .answers div {
     border-radius: 10px;
     background-color: var(--main-background-color);
     box-shadow: var(--box-shadow);
@@ -126,4 +155,24 @@ body {
 
 .answers div:nth-of-type(4):hover {
     transform: rotate(25deg) scale(1.08);
+}
+
+#after-game {
+    width: 50vw;
+    display: block;
+    margin: auto;
+}
+
+#after-game div {
+    padding: 20px
+}
+
+#after-game .answer-question {
+    font-size: 18px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+#after-game .answer {
+    padding: 4px;
 }

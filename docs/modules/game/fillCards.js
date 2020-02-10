@@ -1,4 +1,4 @@
-import { randomObjectFromArray, decodeEntities } from './helperFunctions.js'
+import { randomObjectFromArray, decodeEntities } from '../helperFunctions.js'
 
 export default function fillCards(trivia) {
     let cards = randomizeCards()
