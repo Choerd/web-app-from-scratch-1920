@@ -11,11 +11,13 @@ export default function playRound(data) {
             checkAnswer(this)
             saveTriviaData(this)
 
-            setTimeout(function () {
-                document.documentElement.style.setProperty('--main-color', '');
-                changedData = rerenderCards()
-            }, 500)
+            this.style.pointerEvents = "none"
 
+            setTimeout(function () {
+                document.querySelectorAll('.answers div').forEach(element => element.style.pointerEvents = "auto")
+                document.documentElement.style.setProperty('--main-color', '')
+                changedData = rerenderCards()
+            }, 400)
         })
     })
 }

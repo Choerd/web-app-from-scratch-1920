@@ -3,6 +3,8 @@ import { resultContainer } from './createResults.js'
 
 export default function setupResults() {
     document.querySelector('#before-game').className = 'hide'
+    document.querySelector('.enter-results').className = 'hide'
+
 
     document.querySelector('body').appendChild(createContainer("after-game"))
     document.querySelector('.after-game').id = "after-game"
