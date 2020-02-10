@@ -2,7 +2,6 @@ import { createContainer, createQuestionCard, createAnswerCard } from './createC
 import fillCards from './fillCards.js'
 import { popUsedQuestion } from './helperFunctions.js'
 
-
 export default function setupGame(data) {
     let trivia = data[Math.floor(Math.random() * Math.floor(data.length))]
     let answers = [trivia.correct_answer, trivia.incorrect_answers].flat(2)

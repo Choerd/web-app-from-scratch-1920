@@ -1,3 +1,12 @@
+:root {
+    --main-color: #f2b31f;
+    --main-background-color: #fff;
+    --box-shadow: inset 0px 0px 10px 0px rgb(201, 201, 201);
+    --border: 1px solid rgb(208, 208, 208);
+    --correct-answer: #D81D57;
+    --wrong-answer: #2ab17b;
+}
+
 * {
     font-family: Raleway, Helvetica, sans-serif;
     margin: 0;
@@ -10,7 +19,7 @@
 
 body {
     height: 100vh;
-    background-color: #f2b31f;
+    background-color: var(--main-color);
 }
 
 .game img {
@@ -22,13 +31,13 @@ body {
 }
 
 .question, .answers > div {
-    border: 1px solid rgb(208, 208, 208);
+    border: var(--border)
 }
 
 .game > div:first-of-type, .game > div:nth-of-type(2) div {
     border-radius: 10px;
-    background-color: white;
-    box-shadow: inset 0px 0px 10px 0px rgb(201, 201, 201);
+    background-color: var(--main-background-color);
+    box-shadow: var(--box-shadow);
 }
 
 .question {

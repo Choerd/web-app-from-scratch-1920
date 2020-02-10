@@ -8,6 +8,7 @@ export default function playRound(data) {
     document.querySelectorAll('.answers div').forEach(card => {
         card.addEventListener('click', function () {
 
+            // Write function that checks if the answer is correct or wrong and changes background color to green or red
             saveTriviaData(this)
             changedData = rerenderCards()
 
