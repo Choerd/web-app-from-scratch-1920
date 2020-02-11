@@ -11,7 +11,7 @@ export default function playRound(data) {
             checkAnswer(this)
             saveTriviaData(this)
 
-            this.style.pointerEvents = "none"
+            document.querySelectorAll('.answers div').forEach(element => element.style.pointerEvents = "none")
 
             setTimeout(function () {
                 document.querySelectorAll('.answers div').forEach(element => element.style.pointerEvents = "auto")

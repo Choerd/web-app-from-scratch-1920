@@ -1,5 +1,4 @@
 let fixCorsError = 'https://cors-anywhere.herokuapp.com/'
-let searchUrl = 'https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search='
 
 let test = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles='
 
@@ -16,8 +15,11 @@ export default async function fetchData2(answers) {
 
         const response = fetch(fixCorsError + test + string)
             .then(res => res.json())
-            .then(jsonData => {
-                console.log(jsonData)
-            })
+            .then(jsonData => jsonData.query.pages)
+            .catch(error => console.log(error))
+
+        return response
     })
+    const promisedData = Promise.all(wikipedia)
+    return promisedData
 }

@@ -12,6 +12,8 @@ export default function setupGame(data) {
     document.querySelector('.game').appendChild(createContainer("answers"))
     answers.forEach(answer => document.querySelector('.answers').appendChild(createAnswerCard()))
 
+    localStorage.clear()
+
     // Create empty array to save all the answers
     window.localStorage.setItem('trivia', JSON.stringify([]))
 

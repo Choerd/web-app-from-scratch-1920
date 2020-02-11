@@ -1,20 +1,30 @@
-export function resultContainer(answer) {
+export function resultContainer(data) {
+    let userData = data[0]
+    let wikipediaData = data[1]
+
     let div = document.createElement('div')
 
-    div.appendChild(questionElement(answer.question))
-    answerElement([answer.correctAnswer, answer.wrongAnswers]).forEach(answer => {
+    div.appendChild(questionElement([userData.question, wikipediaData]))
+    answerElement([userData.correctAnswer, userData.wrongAnswers]).forEach(answer => {
         div.appendChild(answer)
     })
 
     return div
 }
 
-function questionElement(question) {
-    let p = document.createElement('p')
-    p.textContent = question
-    p.className = "answer-question"
+function questionElement(data) {
+    let a = document.createElement('a')
+    a.textContent = data[0]
 
-    return p
+    if (data[1][Object.keys(data[1])].pageid) {
+        a.href = "#" + data[1][Object.keys(data[1])].pageid
+    } else {
+        a.href = ""
+        a.style.color = "black"
+    }
+    a.className = "answer-question"
+
+    return a
 }
 
 function answerElement(answer) {
