@@ -60,11 +60,11 @@ function saveTriviaData(user) {
 function rerenderCards() {
     let newTrivia = changedData[Math.floor(Math.random() * Math.floor(changedData.length))]
 
-    console.log(newTrivia)
-    console.log(changedData)
-
     if (changedData.length != 0) {
         fillCards(newTrivia)
+
+        console.log(newTrivia)
+        console.log(changedData)
     } else {
         gameOver()
     }

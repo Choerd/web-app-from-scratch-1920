@@ -3,6 +3,9 @@ import setupGame from './modules/game/setupGame.js'
 import playRound from './modules/game/playRound.js'
 import setupResults from './modules/results/setupResults.js'
 
+
+import fetchData2 from './wikipedia/wikipediaData.js'
+
 function renderGame() {
     fetchData()
         .then(data => setupGame(data))
@@ -27,6 +30,18 @@ routie({
     },
     'after-game': function () {
         console.log('Check your results')
-        setupResults()
+        document.querySelector('#before-game').className = 'hide'
+        document.querySelector('.enter-results').className = 'hide'
+
+
+        let savedAnswers = JSON.parse(localStorage.getItem('trivia'))
+        savedAnswers.forEach(answer => {
+            // console.log(answer.correctAnswer)
+        })
+
+        fetchData2(savedAnswers)
+
+
+        setupResults(savedAnswers)
     }
 })

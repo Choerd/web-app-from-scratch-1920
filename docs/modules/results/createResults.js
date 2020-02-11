@@ -1,5 +1,3 @@
-
-
 export function resultContainer(answer) {
     let div = document.createElement('div')
 
@@ -30,7 +28,6 @@ function answerElement(answer) {
         return p
     })
 }
-
 
 // extra function
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
