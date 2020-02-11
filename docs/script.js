@@ -53,6 +53,13 @@ routie({
         if (document.querySelector('.enter-results').className != 'enter-results hide') {
             document.querySelector('.enter-results').className = 'hide'
         }
+
         getInfoAnswers(JSON.parse(localStorage.getItem('trivia')))
+    },
+    ':id': function (id) {
+        let wikipediaData = JSON.parse(localStorage.getItem('wikipedia'))
+        let contentData = wikipediaData.filter(item => Object.keys(item)[0] == id)[0][id]
+
+        console.log(contentData)
     }
 })
