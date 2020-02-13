@@ -21,6 +21,13 @@
 ## Actor diagram
 <img alt="Schermafbeelding 2020-02-10 om 11 56 06" src="https://user-images.githubusercontent.com/45365598/74144150-7ed5bd00-4bfc-11ea-85f3-49d91e843faa.png">
 
+## Interaction digram
+**Playing the game** 
+<img alt="Schermafbeelding 2020-02-14 om 00 32 21" src="https://user-images.githubusercontent.com/45365598/74488162-a8733a80-4ec1-11ea-8852-2967bc6693f0.png">
+
+**Checking the results**
+<img alt="Schermafbeelding 2020-02-14 om 00 32 27" src="https://user-images.githubusercontent.com/45365598/74488193-b88b1a00-4ec1-11ea-960d-c110396bc37d.png">
+
 
 ## API
 
@@ -44,6 +51,5 @@
 <!-- ...but how does one use this project? What are its features 🤔 -->
 
 <!-- What external data source is featured in your project and what are its properties 🌠 -->
-
 
 <!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
