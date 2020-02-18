@@ -58,6 +58,10 @@ routie({
         } else {
             document.querySelector('#after-game').style.display = 'block'
         }
+
+        if (document.querySelector('.wikipediaContent') != null) {
+            document.querySelector('.wikipediaContent').remove()
+        }
     },
     ':id': function (id) {
         if (document.querySelector('#before-game').className != 'hide') {
