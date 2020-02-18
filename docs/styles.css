@@ -13,10 +13,6 @@
     padding: 0;
 }
 
-.hide {
-    display: none;
-}
-
 body {
     height: 100vh;
     background-color: var(--main-color);
@@ -157,7 +153,7 @@ body {
     transform: rotate(25deg) scale(1.08);
 }
 
-#after-game {
+#after-game, .wikipediaContent {
     width: 50vw;
     display: block;
     margin: auto;
@@ -180,4 +176,27 @@ body {
 
 .answer-question {
     text-decoration: none;
+}
+
+.wikipediaContent {
+    margin-top: 8vh;
+}
+
+.wikipediaContent:before {
+    content: "All about: ";
+    font-size: 1.5vw;
+    margin-bottom: 8px;
+}
+
+.wikipediaContent h1 {
+    font-size: 3vw;
+    margin-bottom: 4px;
+}
+
+.hide {
+    display: none;
+}
+
+.block {
+    display: block;
 }

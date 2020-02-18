@@ -16,11 +16,10 @@ function questionElement(data) {
     let a = document.createElement('a')
     a.textContent = data[0]
 
-    if (data[1][Object.keys(data[1])].pageid) {
+    console.log(data[1][Object.keys(data[1])].pageid)
+
+    if (data[1][Object.keys(data[1])].pageid != undefined) {
         a.href = "#" + data[1][Object.keys(data[1])].pageid
-    } else {
-        a.href = ""
-        a.style.color = "black"
     }
     a.className = "answer-question"
 
