@@ -5,7 +5,7 @@ export function resultContainer(data) {
     let div = document.createElement('div')
 
     div.appendChild(questionElement([userData.question, wikipediaData]))
-    answerElement([userData.correctAnswer, userData.wrongAnswers]).forEach(answer => {
+    answerElement([userData.correctAnswer, userData.wrongAnswers, userData.userAnswer]).forEach(answer => {
         div.appendChild(answer)
     })
 
@@ -27,12 +27,34 @@ function questionElement(data) {
 }
 
 function answerElement(answer) {
-    let allAnswers = shuffleArray(answer.flat(2))
+
+    console.log(answer[0])
+    console.log(answer[1])
+    console.log(answer[2])
+
+    let correctAnswer = answer[0]
+    let userAnswer = answer[2]
+
+
+    let allAnswers = shuffleArray([answer[0], answer[1]].flat(2))
 
     return allAnswers.map(answer => {
         let p = document.createElement('p')
         p.textContent = answer
         p.className = "answer"
+
+        if (correctAnswer === userAnswer) {
+            if (correctAnswer === answer) {
+                p.style.backgroundColor = 'green'
+            }
+        }
+        if (correctAnswer != userAnswer) {
+            if (correctAnswer === answer) {
+                p.style.backgroundColor = 'green'
+            } else if (userAnswer === answer) {
+                p.style.backgroundColor = 'red'
+            }
+        }
 
         return p
     })
