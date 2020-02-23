@@ -11,12 +11,12 @@ function renderGame() {
         .catch(error => console.log(error))
 }
 
-
 function getInfoAnswers(answers) {
     if (JSON.parse(localStorage.getItem('wikipedia')) == null) {
         console.log('Data from fetchCall')
         fetchData2(answers)
             .then(data => {
+                console.log(data)
                 localStorage.setItem('wikipedia', JSON.stringify(data))
                 return data
             })

@@ -8,7 +8,6 @@ let test = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=ext
 // Regex from: https://stackoverflow.com/questions/19921844/how-to-remove-all-special-characters-except-numbers-and-space-in-a-string-using/19925179
 
 export default async function fetchData2(answers) {
-
     const wikipedia = answers.map(answer => {
         let removeSpecialCharactersFromString = answer.correctAnswer.replace(/[^a-z\d\s]+/gi, "")
         let string = removeSpecialCharactersFromString.replace(/ /g, "_")
