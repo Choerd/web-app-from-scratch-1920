@@ -16,26 +16,18 @@ function questionElement(data) {
     let a = document.createElement('a')
     a.textContent = data[0]
 
-    console.log(data[1][Object.keys(data[1])].pageid)
-
     if (data[1][Object.keys(data[1])].pageid != undefined) {
         a.href = "#" + data[1][Object.keys(data[1])].pageid
+        a.className = 'wikipediaExists'
     }
-    a.className = "answer-question"
+    a.className = a.className + " answer-question"
 
     return a
 }
 
 function answerElement(answer) {
-
-    console.log(answer[0])
-    console.log(answer[1])
-    console.log(answer[2])
-
     let correctAnswer = answer[0]
     let userAnswer = answer[2]
-
-
     let allAnswers = shuffleArray([answer[0], answer[1]].flat(2))
 
     return allAnswers.map(answer => {
@@ -51,11 +43,12 @@ function answerElement(answer) {
         if (correctAnswer != userAnswer) {
             if (correctAnswer === answer) {
                 p.style.backgroundColor = 'green'
+                p.className = 'answerIsGood'
             } else if (userAnswer === answer) {
                 p.style.backgroundColor = 'red'
+                p.className = 'answerIsWrong'
             }
         }
-
         return p
     })
 }

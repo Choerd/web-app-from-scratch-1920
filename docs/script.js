@@ -27,7 +27,6 @@ function getInfoAnswers(answers) {
     }
 }
 
-
 routie({
     '': function () {
         console.log('Press to start the game')
@@ -94,7 +93,6 @@ function createWikipediaContainer() {
 }
 
 function createWikipediaElements(data) {
-    console.log(data)
     let article = document.createElement('article')
     let title = document.createElement('h1')
     title.textContent = data.title

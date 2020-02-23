@@ -200,3 +200,23 @@ body {
 .block {
     display: block;
 }
+
+.answerIsWrong, .answerIsGood {
+    padding: 4px;
+}
+
+.answerIsWrong:before {
+    content: "Your answer: "
+}
+
+.answerIsGood:before {
+    content: "Correct answer: ";
+}
+
+.wikipediaExists:before {
+    display: inline-flex;
+    content: url(./images/information.svg);
+    height: 16px;
+    width: 16px;
+    margin-right: 8px;
+}
