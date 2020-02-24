@@ -29,6 +29,8 @@ function answerElement(answer) {
     let correctAnswer = answer[0]
     let userAnswer = answer[2]
     let allAnswers = shuffleArray([answer[0], answer[1]].flat(2))
+    let correctColor = getComputedStyle(document.documentElement).getPropertyValue('--correct-answer')
+    let wrongColor = getComputedStyle(document.documentElement).getPropertyValue('--wrong-answer')
 
     return allAnswers.map(answer => {
         let p = document.createElement('p')
@@ -37,21 +39,22 @@ function answerElement(answer) {
 
         if (correctAnswer === userAnswer) {
             if (correctAnswer === answer) {
-                p.style.backgroundColor = 'green'
+                p.style.backgroundColor = correctColor
             }
         }
         if (correctAnswer != userAnswer) {
             if (correctAnswer === answer) {
-                p.style.backgroundColor = 'green'
+                p.style.backgroundColor = correctColor
                 p.className = 'answerIsGood'
             } else if (userAnswer === answer) {
-                p.style.backgroundColor = 'red'
+                p.style.backgroundColor = wrongColor
                 p.className = 'answerIsWrong'
             }
         }
         return p
     })
 }
+
 
 // extra function
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array

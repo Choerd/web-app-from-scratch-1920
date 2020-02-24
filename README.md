@@ -99,6 +99,26 @@ extract: "1979 (MCMLXXIX) was a common year starting on Monday of the Gregorian 
 <hr>
 
 ## Data transformation and manipulation
+**Trivia Open Database**    
+`Transformation of the data`  
+The Trivia API gave me a really nice formatted structure of the data. There was no transformation or manipulation needed before I could use the data. 
+
+`How my data works inside the appilication`  
+When the user starts the game a random question will be picked, the cards will be created and the data will be added. Every time the user picks a answer that question get's removed from the array and a new question will be picked and refill the cards with that data.
+
+The answer that the user gave will be saved in the LocalStorage. This data will be used later on the application to create the overviewpage.
+
+**Wikipedia API**  
+`Transformation of the data`  
+The Wikipedia API gives back really nice data if you use the right way to fetch the data. Because there are unlimited ways to do this I found it very hard to get the right data. Because the data I finally got was clean I didn't need to clean it.
+
+`How my data works inside the appilication`  
+When the user ends the game and clicks on 'Check my results' the correct answers of all the questions will be used to fetch data from Wikipedia. When all the results are fetched the overviewpage will render. When the clicks on a question the title and the extract about that subject will show up on the detailpage.
+
+`Amount of API calls per hour`  
+Because the Wikpedia API gives the user only around 10 calls per hour the data will be stored in LocalStorage when the user loads the overviewpage for the first time. When the user navigates between detailpages and the overviewpage the data doens't have to be fetched over and over again but will be taken from the LocalStorage.
+
+<hr>
 
 ## Actor diagram
 <img alt="Schermafbeelding 2020-02-10 om 11 56 06" src="https://user-images.githubusercontent.com/45365598/74144150-7ed5bd00-4bfc-11ea-85f3-49d91e843faa.png">
@@ -112,15 +132,3 @@ extract: "1979 (MCMLXXIX) was a common year starting on Monday of the Gregorian 
 
 
 ## Credits
-
-<!-- Add a nice poster image here at the end of the week, showing off your shiny frontend 📸 -->
-
-<!-- Maybe a table of contents here? 📚 -->
-
-<!-- How about a section that describes how to install this project? 🤓 -->
-
-<!-- ...but how does one use this project? What are its features 🤔 -->
-
-<!-- What external data source is featured in your project and what are its properties 🌠 -->
-
-<!-- How about a license here? 📜 (or is it a licence?) 🤷 -->

@@ -1,30 +1,14 @@
-import fetchData from './modules/data.js'
 import setupGame from './modules/game/setupGame.js'
 import playRound from './modules/game/playRound.js'
-import setupResults from './modules/results/setupResults.js'
-import fetchData2 from './modules/wikipedia/wikipediaData.js'
+import renderScoreboard from './modules/results/setupResults.js'
+
+import * as api from './modules/data.js'
 
 function renderGame() {
-    fetchData()
+    api.fetchTriviaData()
         .then(data => setupGame(data))
         .then(data => playRound(data))
         .catch(error => console.log(error))
-}
-
-function getInfoAnswers(answers) {
-    if (JSON.parse(localStorage.getItem('wikipedia')) == null) {
-        console.log('Data from fetchCall')
-        fetchData2(answers)
-            .then(data => {
-                console.log(data)
-                localStorage.setItem('wikipedia', JSON.stringify(data))
-                return data
-            })
-            .then(data => setupResults([JSON.parse(localStorage.getItem('trivia')), data]))
-    } else {
-        console.log('Data from LocalStorage')
-        setupResults([JSON.parse(localStorage.getItem('trivia')), JSON.parse(localStorage.getItem('wikipedia'))])
-    }
 }
 
 routie({
@@ -53,7 +37,7 @@ routie({
         }
 
         if (document.querySelector('#after-game') == null) {
-            getInfoAnswers(JSON.parse(localStorage.getItem('trivia')))
+            renderScoreboard(JSON.parse(localStorage.getItem('trivia')))
         } else {
             document.querySelector('#after-game').style.display = 'block'
         }
