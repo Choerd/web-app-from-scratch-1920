@@ -9,10 +9,12 @@ export async function fetchTriviaData() {
     return data.results
 }
 
+
 // Wikipedia API
 // Regex from: https://stackoverflow.com/questions/19921844/how-to-remove-all-special-characters-except-numbers-and-space-in-a-string-using/19925179
 let fixCorsError = 'https://cors-anywhere.herokuapp.com/'
 let summary = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles='
+
 export async function fetchWikipediaData(answers) {
     const wikipedia = answers.map(answer => {
         let removeSpecialCharactersFromString = answer.correctAnswer.replace(/[^a-z\d\s]+/gi, "")
@@ -28,4 +30,3 @@ export async function fetchWikipediaData(answers) {
     const promisedData = Promise.all(wikipedia)
     return promisedData
 }
-

@@ -59,7 +59,6 @@ export function resultAnswer(answer) {
                 p.className = 'answerIsWrong'
             }
         }
-
         return p
     })
 }

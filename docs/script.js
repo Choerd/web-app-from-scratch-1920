@@ -27,7 +27,6 @@ routie({
     },
     'after-game': function () {
         console.log('Check your results')
-
         if (document.querySelector('#before-game').className != 'hide') {
             document.querySelector('#before-game').className = 'hide'
         }
