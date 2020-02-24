@@ -1,8 +1,8 @@
 import setupGame from './modules/game/setupGame.js'
 import playRound from './modules/game/playRound.js'
-import renderScoreboard from './modules/results/setupResults.js'
-
+import renderScoreboard from './modules/results/renderScoreboard.js'
 import * as api from './modules/data.js'
+import * as build from './modules/buildElements.js'
 
 function renderGame() {
     api.fetchTriviaData()
@@ -59,32 +59,12 @@ routie({
         let contentData = wikipediaData.filter(item => Object.keys(item)[0] == id)[0][id]
 
         if (document.querySelector('.wikipediaContent') == null) {
-            document.querySelector('body').appendChild(createWikipediaContainer())
-            document.querySelector('.wikipediaContent').appendChild(createWikipediaElements(contentData))
+            document.querySelector('body').appendChild(build.container('wikipediaContent'))
+            document.querySelector('.wikipediaContent').appendChild(build.wikipediaContent(contentData))
         } else {
             document.querySelector('.wikipediaContent').remove()
-            document.querySelector('body').appendChild(createWikipediaContainer())
-            document.querySelector('.wikipediaContent').appendChild(createWikipediaElements(contentData))
+            document.querySelector('body').appendChild(build.container('wikipediaContent'))
+            document.querySelector('.wikipediaContent').appendChild(build.wikipediaContent(contentData))
         }
     }
 })
-
-function createWikipediaContainer() {
-    let section = document.createElement('section')
-    section.className = "wikipediaContent"
-
-    return section
-}
-
-function createWikipediaElements(data) {
-    let article = document.createElement('article')
-    let title = document.createElement('h1')
-    title.textContent = data.title
-    let text = document.createElement('p')
-    text.textContent = data.extract
-
-    article.appendChild(title)
-    article.appendChild(text)
-
-    return article
-}

@@ -28,7 +28,6 @@ function randomizeCards() {
     let wrongAnswerCards = document.querySelectorAll('.answers div:not([data-answer="true"])')
     wrongAnswerCards.forEach(card => card.setAttribute('data-answer', false))
 
-    // Console.log for overview of the answers
     answerCards.forEach((card, i) => {
         console.log("Kaart", i + 1, ":", card)
     })
