@@ -22,7 +22,7 @@ In this course you will learn to build a web application without frameworks or u
 ## Concept
 I made a game with data from the Trivia Open Database API. It's a game where you get a random question with four answers, one of them is correct the others are wrong. After 10 questions you get to see your result and you will be able to get more information about the correct answers. This will be possible because the good answers are used in the Wikipedia API which returns the information about that subject to the user.
 
-<img alt="Schermafbeelding 2020-02-04 om 15 56 22" src="https://user-images.githubusercontent.com/45365598/73755834-f45a0d00-4766-11ea-87ef-8f2234a89881.png">
+<img alt="Schermafbeelding 2020-02-25 om 11 33 14" src="https://user-images.githubusercontent.com/45365598/75239231-a3b45d80-57c2-11ea-83fd-10540af18536.png">
 
 <hr>
 
