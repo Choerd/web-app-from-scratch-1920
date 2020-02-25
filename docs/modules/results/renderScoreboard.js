@@ -5,13 +5,22 @@ export default function renderScoreboard(answers) {
     if (JSON.parse(localStorage.getItem('wikipedia')) == null) {
         console.log('Data from fetching')
 
+        document.querySelector('#loading-state').style.display = 'block'
+        console.log('loading')
+
         api.fetchWikipediaData(answers)
             .then(data => {
                 console.log(data)
                 localStorage.setItem('wikipedia', JSON.stringify(data))
                 return data
             })
-            .then(data => createResults([JSON.parse(localStorage.getItem('trivia')), data]))
+            .then(data => (function () {
+                document.querySelector('#loading-state').style.display = 'none'
+
+                console.log('loaded')
+
+                createResults([JSON.parse(localStorage.getItem('trivia')), data])
+            })())
     } else {
         console.log('Data from LocalStorage')
         createResults([JSON.parse(localStorage.getItem('trivia')), JSON.parse(localStorage.getItem('wikipedia'))])
