@@ -64,10 +64,10 @@ export function resultAnswer(answer) {
 }
 
 export function wikipediaContent(data) {
-    let article = document.createElement('article')
-    let title = document.createElement('h1')
+    const article = document.createElement('article')
+    const title = document.createElement('h1')
     title.textContent = data.title
-    let text = document.createElement('p')
+    const text = document.createElement('p')
     text.textContent = data.extract
 
     article.appendChild(title)

@@ -3,8 +3,8 @@ import * as helper from '../helperFunctions.js'
 import * as build from '../buildElements.js'
 
 export default function setupGame(data) {
-    let trivia = data[Math.floor(Math.random() * Math.floor(data.length))]
-    let answers = [trivia.correct_answer, trivia.incorrect_answers].flat(2)
+    const trivia = data[Math.floor(Math.random() * Math.floor(data.length))]
+    const answers = [trivia.correct_answer, trivia.incorrect_answers].flat(2)
 
     // Create container for game
     document.querySelector('body').appendChild(build.container('game'))

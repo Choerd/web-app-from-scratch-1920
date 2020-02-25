@@ -1,10 +1,10 @@
 import { randomObjectFromArray, decodeEntities } from '../helperFunctions.js'
 
 export default function fillCards(trivia) {
-    let cards = randomizeCards()
-    let question = trivia.question
-    let correctAnswer = trivia.correct_answer
-    let wrongAnswers = trivia.incorrect_answers
+    const cards = randomizeCards()
+    const question = trivia.question
+    const correctAnswer = trivia.correct_answer
+    const wrongAnswers = trivia.incorrect_answers
 
     document.querySelector('.question p').textContent = decodeEntities(question)
     cards[0].querySelector('p').textContent = decodeEntities(correctAnswer)
@@ -14,7 +14,7 @@ export default function fillCards(trivia) {
 }
 
 function randomizeCards() {
-    let answerCards = document.querySelectorAll('.answers div')
+    const answerCards = document.querySelectorAll('.answers div')
 
     answerCards.forEach(card => {
         if (card.getAttribute('data-answer') != null) {
@@ -22,10 +22,10 @@ function randomizeCards() {
         }
     })
 
-    let correctAnswerCard = randomObjectFromArray(answerCards)
+    const correctAnswerCard = randomObjectFromArray(answerCards)
     correctAnswerCard.setAttribute('data-answer', true)
 
-    let wrongAnswerCards = document.querySelectorAll('.answers div:not([data-answer="true"])')
+    const wrongAnswerCards = document.querySelectorAll('.answers div:not([data-answer="true"])')
     wrongAnswerCards.forEach(card => card.setAttribute('data-answer', false))
 
     answerCards.forEach((card, i) => {

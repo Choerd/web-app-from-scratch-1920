@@ -23,11 +23,11 @@ export default function playRound(data) {
 }
 
 function checkAnswer(answer) {
-    let correctAnswer = document.querySelector('.answers div[data-answer="true"]').textContent
-    let userAnswer = answer.querySelector('p').textContent
+    const correctAnswer = document.querySelector('.answers div[data-answer="true"]').textContent
+    const userAnswer = answer.querySelector('p').textContent
 
-    let correctColor = getComputedStyle(document.documentElement).getPropertyValue('--correct-answer')
-    let wrongColor = getComputedStyle(document.documentElement).getPropertyValue('--wrong-answer')
+    const correctColor = getComputedStyle(document.documentElement).getPropertyValue('--correct-answer')
+    const wrongColor = getComputedStyle(document.documentElement).getPropertyValue('--wrong-answer')
 
     if (correctAnswer == userAnswer) {
         document.documentElement.style.setProperty('--main-color', correctColor);
@@ -37,15 +37,15 @@ function checkAnswer(answer) {
 }
 
 function saveTriviaData(user) {
-    let question = document.querySelector('.question p').textContent
-    let correctAnswer = document.querySelector('.answers div[data-answer="true"]').textContent
-    let wrongAnswers = []
+    const question = document.querySelector('.question p').textContent
+    const correctAnswer = document.querySelector('.answers div[data-answer="true"]').textContent
+    const wrongAnswers = []
 
     document.querySelectorAll('.answers div:not([data-answer="true"])').forEach(answer => {
         wrongAnswers.push(answer.textContent)
     })
 
-    let savedAnswers = JSON.parse(localStorage.getItem('trivia'))
+    const savedAnswers = JSON.parse(localStorage.getItem('trivia'))
     savedAnswers.push({
         userAnswer: user.querySelector('p').textContent,
         question: question,
@@ -58,7 +58,7 @@ function saveTriviaData(user) {
 }
 
 function rerenderCards() {
-    let newTrivia = changedData[Math.floor(Math.random() * Math.floor(changedData.length))]
+    const newTrivia = changedData[Math.floor(Math.random() * Math.floor(changedData.length))]
 
     if (changedData.length != 0) {
         fillCards(newTrivia)

@@ -36,7 +36,7 @@ Open the file in a code editor and use a live preview or host the code with Gith
 <hr>
 
 ## Features
-**Smart solution for data from Wikipedia**
+**Smart solution for data from Wikipedia**  
 When the user has finished the game, all the correct answers are passed in a function which extracts data from Wikipedia. This can be done around 10 times a hour, which is a problem when the user wants to get all the information about every answer or when the user plays the game twice a hour.
 
 A smart solution for this problem is when the game is finished, the data will be fetched once and will be put in the LocalStorage. When the user switches from detailpage to overviewpage the data will not be fetched every time but when it has already been fetched the data from the LocalStorage will be used.
@@ -127,13 +127,13 @@ Because the Wikpedia API gives the user only around 10 calls per hour the data w
 <img alt="Schermafbeelding 2020-02-25 om 11 22 18" src="https://user-images.githubusercontent.com/45365598/75238451-4d92ea80-57c1-11ea-992d-224c9ac8adae.png">
 
 ## Interaction diagram
-**Playing the game** 
+**Playing the game**   
 When the user starts the game 10 random Trivia's will be fetched from the Trivia API. When that's done the cards are rendered with the data. If the user clicks on a answer this answer will be saved and put into LocalStorage. A new question will be picked and the cards will rerender. This happens over and over again until there are no more questions left, then the "Check results"-viewport will appear.
 <img alt="Schermafbeelding 2020-02-25 om 11 22 32" src="https://user-images.githubusercontent.com/45365598/75238486-5c799d00-57c1-11ea-8cb2-ca9b3cf9e5c5.png">
 
-**After the game**
+**After the game**  
 When the user clicks on "Check results" the data of all the correct answers will be fetched with the Wikipedia API. When this is done the data will be stored in LocalStorage. Then the data will be used to render the scoreboard. When the user wants more information about a specific answer he can navigate to the detailpage. When the user wants to go back the data will be pulled from LocalStorage instead of fetching the data again.
 <img alt="Schermafbeelding 2020-02-25 om 11 22 37" src="https://user-images.githubusercontent.com/45365598/75238511-69968c00-57c1-11ea-809b-a4e2f14d1d80.png">
 
 
-## Credits
+## Credits                                                           

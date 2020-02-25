@@ -1,7 +1,7 @@
 // Trivia Open Database
-let amount = 10
-let type = 'multiple'
-let url = 'https://opentdb.com/api.php?amount=' + amount + '&type=' + type
+const amount = 10
+const type = 'multiple'
+const url = 'https://opentdb.com/api.php?amount=' + amount + '&type=' + type
 
 export async function fetchTriviaData() {
     const response = await fetch(url)
@@ -12,13 +12,13 @@ export async function fetchTriviaData() {
 
 // Wikipedia API
 // Regex from: https://stackoverflow.com/questions/19921844/how-to-remove-all-special-characters-except-numbers-and-space-in-a-string-using/19925179
-let fixCorsError = 'https://cors-anywhere.herokuapp.com/'
-let summary = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles='
+const fixCorsError = 'https://cors-anywhere.herokuapp.com/'
+const summary = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles='
 
 export async function fetchWikipediaData(answers) {
     const wikipedia = answers.map(answer => {
-        let removeSpecialCharactersFromString = answer.correctAnswer.replace(/[^a-z\d\s]+/gi, "")
-        let string = removeSpecialCharactersFromString.replace(/ /g, "_")
+        const removeSpecialCharactersFromString = answer.correctAnswer.replace(/[^a-z\d\s]+/gi, "")
+        const string = removeSpecialCharactersFromString.replace(/ /g, "_")
 
         const response = fetch(fixCorsError + summary + string)
             .then(res => res.json())

@@ -18,6 +18,8 @@ export default function renderScoreboard(answers) {
 }
 
 function createResults(answers) {
+    reduceExample(JSON.parse(localStorage.getItem('trivia')))
+
     document.querySelector('body').appendChild(build.container("after-game"))
     document.querySelector('.after-game').id = "after-game"
 
@@ -29,4 +31,20 @@ function createResults(answers) {
         build.resultAnswer(answers[0][i]).forEach(answer => document.querySelectorAll('.result')[i].appendChild(answer))
     }
     return answers
+}
+
+// Example of using the reduce function
+function reduceExample(array) {
+    const trueFalseArray = answerTrueOrFalse(array)
+    console.log("You've got", trueFalseArray.reduce((index, result) => index + (result === true), 0), "correct answers")
+}
+
+function answerTrueOrFalse(array) {
+    return array.map(trivia => {
+        if (trivia.userAnswer === trivia.correctAnswer) {
+            return true
+        } else {
+            return false
+        }
+    })
 }
