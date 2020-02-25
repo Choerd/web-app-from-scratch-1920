@@ -112,6 +112,9 @@ The answer that the user gave will be saved in the LocalStorage. This data will 
 `Transformation of the data`  
 The Wikipedia API gives back really nice data if you use the right way to fetch the data. Because there are unlimited ways to do this I found it very hard to get the right data. Because the data I finally got was clean I didn't need to clean it.
 
+`Empty values`  
+When the pageid of the object is `-1` there is no data available of that keyword. There will be no detailpage for that question.
+
 `How my data works inside the appilication`  
 When the user ends the game and clicks on 'Check my results' the correct answers of all the questions will be used to fetch data from Wikipedia. When all the results are fetched the overviewpage will render. When the clicks on a question the title and the extract about that subject will show up on the detailpage.
 
@@ -125,9 +128,11 @@ Because the Wikpedia API gives the user only around 10 calls per hour the data w
 
 ## Interaction diagram
 **Playing the game** 
+When the user starts the game 10 random Trivia's will be fetched from the Trivia API. When that's done the cards are rendered with the data. If the user clicks on a answer this answer will be saved and put into LocalStorage. A new question will be picked and the cards will rerender. This happens over and over again until there are no more questions left, then the "Check results"-viewport will appear.
 <img alt="Schermafbeelding 2020-02-25 om 11 22 32" src="https://user-images.githubusercontent.com/45365598/75238486-5c799d00-57c1-11ea-8cb2-ca9b3cf9e5c5.png">
 
-**Checking the results**
+**After the game**
+When the user clicks on "Check results" the data of all the correct answers will be fetched with the Wikipedia API. When this is done the data will be stored in LocalStorage. Then the data will be used to render the scoreboard. When the user wants more information about a specific answer he can navigate to the detailpage. When the user wants to go back the data will be pulled from LocalStorage instead of fetching the data again.
 <img alt="Schermafbeelding 2020-02-25 om 11 22 37" src="https://user-images.githubusercontent.com/45365598/75238511-69968c00-57c1-11ea-809b-a4e2f14d1d80.png">
 
 
