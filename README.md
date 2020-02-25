@@ -121,14 +121,14 @@ Because the Wikpedia API gives the user only around 10 calls per hour the data w
 <hr>
 
 ## Actor diagram
-<img alt="Schermafbeelding 2020-02-10 om 11 56 06" src="https://user-images.githubusercontent.com/45365598/74144150-7ed5bd00-4bfc-11ea-85f3-49d91e843faa.png">
+<img alt="Schermafbeelding 2020-02-25 om 11 22 18" src="https://user-images.githubusercontent.com/45365598/75238451-4d92ea80-57c1-11ea-992d-224c9ac8adae.png">
 
 ## Interaction diagram
 **Playing the game** 
-<img alt="Schermafbeelding 2020-02-14 om 00 32 21" src="https://user-images.githubusercontent.com/45365598/74488162-a8733a80-4ec1-11ea-8852-2967bc6693f0.png">
+<img alt="Schermafbeelding 2020-02-25 om 11 22 32" src="https://user-images.githubusercontent.com/45365598/75238486-5c799d00-57c1-11ea-8cb2-ca9b3cf9e5c5.png">
 
 **Checking the results**
-<img alt="Schermafbeelding 2020-02-14 om 00 32 27" src="https://user-images.githubusercontent.com/45365598/74488193-b88b1a00-4ec1-11ea-960d-c110396bc37d.png">
+<img alt="Schermafbeelding 2020-02-25 om 11 22 37" src="https://user-images.githubusercontent.com/45365598/75238511-69968c00-57c1-11ea-809b-a4e2f14d1d80.png">
 
 
 ## Credits
