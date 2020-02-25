@@ -5,8 +5,13 @@ import * as api from './modules/data.js'
 import * as build from './modules/buildElements.js'
 
 function renderGame() {
+    document.querySelector('#loading-state').style.display = 'block'
     api.fetchTriviaData()
         .then(data => setupGame(data))
+        .then(data => (function () {
+            document.querySelector('#loading-state').style.display = 'none'
+            return data
+        })())
         .then(data => playRound(data))
         .catch(error => console.log(error))
 }
@@ -20,10 +25,12 @@ routie({
             document.querySelector('#during-game').remove()
         }
     },
-    'during-game': function () {
+    'during-game': async function () {
         console.log('Game has started')
+
         document.querySelector('#before-game').className = "hide"
         renderGame()
+
     },
     'after-game': function () {
         console.log('Check your results')

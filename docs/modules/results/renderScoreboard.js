@@ -4,6 +4,7 @@ import * as api from '../data.js'
 export default function renderScoreboard(answers) {
     if (JSON.parse(localStorage.getItem('wikipedia')) == null) {
         console.log('Data from fetching')
+
         api.fetchWikipediaData(answers)
             .then(data => {
                 console.log(data)

@@ -224,3 +224,11 @@ body {
     width: 16px;
     margin-right: 8px;
 }
+
+#loading-state {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
