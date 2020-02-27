@@ -31,7 +31,7 @@ Clone the repository on your computer
 
 `https://github.com/Choerd/web-app-from-scratch-1920.git`
 
-Open the file in a code editor and use a live preview or host the code with Github Pages
+Open the file in a code editor and use a live preview or host the code with Github Pages and run the `index.html`
 
 <hr>
 
@@ -129,11 +129,16 @@ Because the Wikpedia API gives the user only around 10 calls per hour the data w
 ## Interaction diagram
 **Playing the game**   
 When the user starts the game 10 random Trivia's will be fetched from the Trivia API. When that's done the cards are rendered with the data. If the user clicks on a answer this answer will be saved and put into LocalStorage. A new question will be picked and the cards will rerender. This happens over and over again until there are no more questions left, then the "Check results"-viewport will appear.
-<img alt="Schermafbeelding 2020-02-25 om 11 22 32" src="https://user-images.githubusercontent.com/45365598/75238486-5c799d00-57c1-11ea-8cb2-ca9b3cf9e5c5.png">
+<img alt="Schermafbeelding 2020-02-27 om 16 04 30" src="https://user-images.githubusercontent.com/45365598/75456500-e6b93100-597a-11ea-8045-feb155c3b4f9.png">
 
 **After the game**  
 When the user clicks on "Check results" the data of all the correct answers will be fetched with the Wikipedia API. When this is done the data will be stored in LocalStorage. Then the data will be used to render the scoreboard. When the user wants more information about a specific answer he can navigate to the detailpage. When the user wants to go back the data will be pulled from LocalStorage instead of fetching the data again.
-<img alt="Schermafbeelding 2020-02-25 om 11 22 37" src="https://user-images.githubusercontent.com/45365598/75238511-69968c00-57c1-11ea-809b-a4e2f14d1d80.png">
+<img alt="Schermafbeelding 2020-02-27 om 16 04 35" src="https://user-images.githubusercontent.com/45365598/75456510-ea4cb800-597a-11ea-92c0-0dada0f05801.png">
 
+<hr>
 
-## Credits                                                           
+## Credits
+* @damian1997 helped me with fetching data from Wikipedia in a smart way
+    * I was fetching Wikipedia Data based in the Trivia Data in a foreach(). With the Promise.all() the function now waits for all the data to be fetched and returns a array.
+
+<!-- A webapp game that uses data from the Trivia API to play the game and uses the Wikipedia API to get more information. -->

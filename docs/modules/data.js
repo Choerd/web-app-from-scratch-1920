@@ -20,13 +20,13 @@ export async function fetchWikipediaData(answers) {
         const removeSpecialCharactersFromString = answer.correctAnswer.replace(/[^a-z\d\s]+/gi, "")
         const string = removeSpecialCharactersFromString.replace(/ /g, "_")
 
-        const response = fetch(fixCorsError + summary + string)
+        const singleWikipediaData = fetch(fixCorsError + summary + string)
             .then(res => res.json())
             .then(jsonData => jsonData.query.pages)
             .catch(error => console.log(error))
 
-        return response
+        return singleWikipediaData
     })
-    const promisedData = Promise.all(wikipedia)
-    return promisedData
+    const allWikipediaData = Promise.all(wikipedia)
+    return allWikipediaData
 }
